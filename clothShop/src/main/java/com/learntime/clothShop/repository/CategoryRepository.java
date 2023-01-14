@@ -1,8 +1,11 @@
 package com.learntime.clothShop.repository;
 
+
 import com.learntime.clothShop.model.CategoryModel;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 
 /**
  * BISMILLAH HIR RAHMAN NIR RAHIM
@@ -13,5 +16,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @Email shohrab.datagridltd@gmail.com
  */
 
+@Repository
 public interface CategoryRepository extends JpaRepository<CategoryModel, Long> {
+
+
 }

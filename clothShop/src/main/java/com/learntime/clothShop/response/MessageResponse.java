@@ -14,11 +14,11 @@ public class MessageResponse {
     boolean success = true;
     String message;
 
-    MessageResponse(String message){
+    public MessageResponse(String message){
         this.message = message;
     }
 
-    MessageResponse(boolean success, String message){
+    public MessageResponse(boolean success, String message){
         this.success = success;
         this.message = message;
     }

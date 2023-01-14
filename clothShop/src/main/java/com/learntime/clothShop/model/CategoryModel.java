@@ -1,6 +1,8 @@
 package com.learntime.clothShop.model;
 
-import jakarta.persistence.*;
+
+import javax.persistence.*;
+
 
 /**
  * BISMILLAH HIR RAHMAN NIR RAHIM
@@ -18,7 +20,8 @@ public class CategoryModel {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
 
-
+   @Column(name = "name", nullable = false)
+   private String name;
 
    public Long getId() {
       return id;
@@ -26,5 +29,13 @@ public class CategoryModel {
 
    public void setId(Long id) {
       this.id = id;
+   }
+
+   public String getName() {
+      return name;
+   }
+
+   public void setName(String name) {
+      this.name = name;
    }
 }
