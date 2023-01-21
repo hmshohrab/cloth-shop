@@ -8,9 +8,7 @@ import com.learntime.clothShop.services.CategoryService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * BISMILLAH HIR RAHMAN NIR RAHIM
@@ -20,7 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @Address 14/A(new), Dhanmondi R/A, Dhaka 1209.
  * @Email shohrab.datagridltd@gmail.com
  */
-@RestController("/category")
+@RestController
+@RequestMapping("/category")
 class CategoryController {
    @Autowired
    CategoryService mCategoryService;
@@ -66,21 +65,16 @@ class CategoryController {
       }
    }
 
-   @PostMapping("read")
-   ResponseEntity<?> read(@RequestBody  CategoryDto dto){
-      MessageResponse  validation = CategoryManager.readValidation(dto);
+   @GetMapping("read")
+   ResponseEntity<?> read(@RequestParam Long id){
+      MessageResponse  validation = CategoryManager.readValidation(String.valueOf(id));
       if(!validation.isSuccess()){
          return ResponseEntity.badRequest().body(validation);
-      }else {
-         CategoryModel categoryModel = new CategoryModel();
-         categoryModel.setName(dto.getId());
-         categoryModel.setName(dto.getName());
-         CategoryModel isSaved =  mCategoryService.update(categoryModel);
-         return ResponseEntity.ok(isSaved);
       }
+     return ResponseEntity.ok(mCategoryService.findById(id));
    }
 
-   @PostMapping("read")
+   @GetMapping("all")
    ResponseEntity<?> showAll(){
          return ResponseEntity.ok(mCategoryService.findAll());
    }

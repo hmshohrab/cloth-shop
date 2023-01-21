@@ -15,10 +15,11 @@ import javax.persistence.*;
 @Entity
 @Table(name = "categories")
 public class CategoryModel {
-   @Id
-   @Column(name = "id", nullable = false)
+
+  // @Column(name = "id", nullable = false)
+  @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Long id;
+    Long id;
 
    @Column(name = "name", nullable = false)
    private String name;
