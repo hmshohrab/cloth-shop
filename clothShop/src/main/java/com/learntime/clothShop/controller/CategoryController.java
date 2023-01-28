@@ -44,7 +44,7 @@ class CategoryController {
          return ResponseEntity.badRequest().body(validation);
       }else {
          CategoryModel categoryModel = new CategoryModel();
-         categoryModel.setName(dto.getId());
+         categoryModel.setId(Long.valueOf(dto.getId()));
          categoryModel.setName(dto.getName());
          CategoryModel isSaved =  mCategoryService.update(categoryModel);
          return ResponseEntity.ok(isSaved);
@@ -58,7 +58,7 @@ class CategoryController {
          return ResponseEntity.badRequest().body(validation);
       }else {
          CategoryModel categoryModel = new CategoryModel();
-         categoryModel.setName(dto.getId());
+         categoryModel.setId(Long.valueOf(dto.getId()));
          categoryModel.setName(dto.getName());
          CategoryModel isSaved =  mCategoryService.update(categoryModel);
          return ResponseEntity.ok(isSaved);

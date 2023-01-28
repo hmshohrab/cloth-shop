@@ -1,37 +1,17 @@
-package com.learntime.clothShop.model;
+package com.learntime.clothShop.dto;
 
-import javax.persistence.*;
+public class ProductDto {
 
-@Entity
-@Table(name = "products")
-public class ProductModel {
-
-    @Id
-    @Column(name ="id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @Column(name="name", nullable = false)
     private  String name;
-
-    @Column(name= "is_featured", nullable = false, columnDefinition = "false")
     private boolean is_featured;
-
-    @Column(name= "price", nullable = false , columnDefinition = "0.0")
     private Double price;
-
-    @Column(name="discount", nullable = false, columnDefinition = "0.0")
     private Double discount;
-
-    @Column(name = "image", nullable = true)
     private String image;
 
-    @Column(name = "description", nullable = true)
     private String description;
 
-
-    @Column(name = "importCountry", nullable = true)
-    private String importCountry;
+    //private String importCountry; This information want to hide from clientSide
 
     public Long getId() {
         return id;
@@ -90,16 +70,4 @@ public class ProductModel {
     }
 
 
-    public String getImportCountry() {
-        return importCountry;
-    }
-
-    public void setImportCountry(String importCountry) {
-        this.importCountry = importCountry;
-    }
-
-
-
 }
-
-//id/name/is_featured/price/dicount/image/description
