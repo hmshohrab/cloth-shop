@@ -24,22 +24,23 @@ class CategoryServiceImpl implements  CategoryService {
     CategoryRepository mCategoryRepository;
 
     @Override
+    public CategoryModel insert(CategoryModel categoryModel){
+
+        return  mCategoryRepository.save(categoryModel);
+    }
+    @Override
     public Optional<CategoryModel> findById(Long id){
+
         return mCategoryRepository.findById(id);
     }
 
     @Override
-    public List<CategoryModel> findAll() {
+    public List<CategoryModel> findAll(){
+
         return mCategoryRepository.findAll();
-     }
-
-    @Override
-    public CategoryModel insert(CategoryModel categoryModel) {
-    return mCategoryRepository.save(categoryModel);
     }
 
     @Override
-    public CategoryModel update(CategoryModel categoryModel) {
-        return mCategoryRepository.save(categoryModel);
-    }
+    public CategoryModel update(CategoryModel categoryModel){
+        return  mCategoryRepository.save(categoryModel);
 }

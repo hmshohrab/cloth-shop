@@ -44,7 +44,7 @@ public class ProductManager {
         if(dto.getPrice() < 0.0){
             return new MessageResponse(false, "Product price not provided");
         }
-        if(dto.getDiscount().toString().isEmpty()){
+        if(dto.getDiscount()<0.0){
             return new MessageResponse(false, "Product discount price not provided");
         }
         if(dto.getImage().isEmpty()){

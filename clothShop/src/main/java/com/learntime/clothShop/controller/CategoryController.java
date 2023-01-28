@@ -37,14 +37,34 @@ class CategoryController {
       }
    }
 
-   @PostMapping("update")
+   @GetMapping("showOne")
+   ResponseEntity<?> read(@RequestBody  CategoryDto dto){
+      MessageResponse  validation = CategoryManager.readValidation(dto);
+      if(!validation.isSuccess()){
+         return ResponseEntity.badRequest().body(validation);
+      }else {
+         CategoryModel categoryModel = new CategoryModel();
+         categoryModel.setName(dto.getId());
+         categoryModel.setName(dto.getName());
+         CategoryModel isSaved =  mCategoryService.update(categoryModel);
+         return ResponseEntity.ok(isSaved);
+      }
+   }
+
+   @GetMapping("showAll")
+   ResponseEntity<?> showAll(){
+      return ResponseEntity.ok(mCategoryService.findAll());
+   }
+
+
+   @PutMapping("update")
    ResponseEntity<?> update(@RequestBody  CategoryDto dto){
       MessageResponse  validation = CategoryManager.updatedValidation(dto);
       if(!validation.isSuccess()){
          return ResponseEntity.badRequest().body(validation);
       }else {
          CategoryModel categoryModel = new CategoryModel();
-         categoryModel.setId(Long.valueOf(dto.getId()));
+         categoryModel.setName(dto.getId());
          categoryModel.setName(dto.getName());
          CategoryModel isSaved =  mCategoryService.update(categoryModel);
          return ResponseEntity.ok(isSaved);
@@ -58,26 +78,11 @@ class CategoryController {
          return ResponseEntity.badRequest().body(validation);
       }else {
          CategoryModel categoryModel = new CategoryModel();
-         categoryModel.setId(Long.valueOf(dto.getId()));
+         categoryModel.setName(dto.getId());
          categoryModel.setName(dto.getName());
          CategoryModel isSaved =  mCategoryService.update(categoryModel);
          return ResponseEntity.ok(isSaved);
       }
    }
-
-   @GetMapping("read")
-   ResponseEntity<?> read(@RequestParam Long id){
-      MessageResponse  validation = CategoryManager.readValidation(String.valueOf(id));
-      if(!validation.isSuccess()){
-         return ResponseEntity.badRequest().body(validation);
-      }
-     return ResponseEntity.ok(mCategoryService.findById(id));
-   }
-
-   @GetMapping("all")
-   ResponseEntity<?> showAll(){
-         return ResponseEntity.ok(mCategoryService.findAll());
-   }
-
 
 }

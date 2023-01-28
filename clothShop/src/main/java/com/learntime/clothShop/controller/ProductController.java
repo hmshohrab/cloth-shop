@@ -25,9 +25,9 @@ class ProductController {
         }else {
             ProductModel productModel = new ProductModel();
             productModel.setName(dto.getName());
+            productModel.setIs_featured(dto.isIs_featured());
             productModel.setPrice(dto.getPrice());
             productModel.setDiscount(dto.getDiscount());
-            productModel.setIs_featured(dto.isIs_featured());
             productModel.setDescription(dto.getDescription());
             ProductModel isSaved =  mProductService.insert(productModel);
             return ResponseEntity.ok(isSaved);
@@ -43,6 +43,10 @@ class ProductController {
             ProductModel productModel = new ProductModel();
             productModel.setId(dto.getId());
             productModel.setName(dto.getName());
+            productModel.setIs_featured(dto.isIs_featured());
+            productModel.setPrice(dto.getPrice());
+            productModel.setDiscount(dto.getDiscount());
+            productModel.setDescription(dto.getDescription());
             ProductModel isSaved =  mProductService.update(productModel);
             return ResponseEntity.ok(isSaved);
         }
@@ -63,6 +67,10 @@ class ProductController {
             ProductModel productModel = new ProductModel();
             productModel.setId(dto.getId());
             productModel.setName(dto.getName());
+            productModel.setIs_featured(dto.isIs_featured());
+            productModel.setPrice(dto.getPrice());
+            productModel.setDiscount(dto.getDiscount());
+            productModel.setDescription(dto.getDescription());
             ProductModel isSaved =  mProductService.update(productModel);
             return ResponseEntity.ok(isSaved);
         }
@@ -77,6 +85,10 @@ class ProductController {
             ProductModel productModel = new ProductModel();
             productModel.setId(dto.getId());
             productModel.setName(dto.getName());
+            productModel.setIs_featured(dto.isIs_featured());
+            productModel.setPrice(dto.getPrice());
+            productModel.setDiscount(dto.getDiscount());
+            productModel.setDescription(dto.getDescription());
             ProductModel isSaved =  mProductService.update(productModel);
             return ResponseEntity.ok(isSaved);
         }
