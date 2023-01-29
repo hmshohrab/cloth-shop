@@ -33,7 +33,7 @@ public class AvailableProductController {
             AvailableProductModel availableProductModel = new AvailableProductModel();
             AvailableProductModel.setColour(dto.getColour());
             AvailableProductModel.setQuantity(dto.getQuantity());
-            AvailableProductModel.setSize(dto.setSize());
+            AvailableProductModel.setSize(dto.getSize());
 
             AvailableProductModel isSaved =  mAvailableProductService.insert(availableProductModel);
             return ResponseEntity.ok(isSaved);
@@ -50,7 +50,7 @@ public class AvailableProductController {
             AvailableProductModel availableProductModel = new AvailableProductModel();
             AvailableProductModel.setColour(dto.getColour());
             AvailableProductModel.setQuantity(dto.getQuantity());
-            AvailableProductModel.setSize(dto.setSize());
+            AvailableProductModel.setSize(dto.getSize());
 
             AvailableProductModel isSaved =  mAvailableProductService.insert(availableProductModel);
             return ResponseEntity.ok(isSaved);
@@ -71,19 +71,13 @@ public class AvailableProductController {
         if(!validation.isSuccess()){
             return ResponseEntity.badRequest().body(validation);
         }else {
-            MessageResponse validation = AvailableProductManager.validation(dto);
-            if(!validation.isSuccess()){
-                return ResponseEntity.badRequest().body(validation);
-            }else {
-                AvailableProductModel availableProductModel = new AvailableProductModel();
-                AvailableProductModel.setColour(dto.getColour());
-                AvailableProductModel.setQuantity(dto.getQuantity());
-                AvailableProductModel.setSize(dto.setSize());
+            AvailableProductModel availableProductModel = new AvailableProductModel();
+            // AvailableProductModel.setColour(dto.getColour());
+            //AvailableProductModel.setQuantity(dto.getQuantity());
+            // AvailableProductModel.setSize(dto.getSize());
 
-                AvailableProductModel isSaved =  mAvailableProductService.insert(availableProductModel);
-                return ResponseEntity.ok(isSaved);
-
-            }
+            AvailableProductModel isSaved =  mAvailableProductService.insert(availableProductModel);
+            return ResponseEntity.ok(isSaved);
 
         }
     }
@@ -94,14 +88,10 @@ public class AvailableProductController {
         if(!validation.isSuccess()){
             return ResponseEntity.badRequest().body(validation);
         }else {
-            MessageResponse validation = AvailableProductManager.validation(dto);
-            if(!validation.isSuccess()){
-                return ResponseEntity.badRequest().body(validation);
-            }else {
                 AvailableProductModel availableProductModel = new AvailableProductModel();
                 AvailableProductModel.setColour(dto.getColour());
                 AvailableProductModel.setQuantity(dto.getQuantity());
-                AvailableProductModel.setSize(dto.setSize());
+                AvailableProductModel.setSize(dto.getSize());
 
                 AvailableProductModel isSaved =  mAvailableProductService.insert(availableProductModel);
                 return ResponseEntity.ok(isSaved);
@@ -109,6 +99,6 @@ public class AvailableProductController {
             }
 
         }
-    }
+
 
 }
