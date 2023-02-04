@@ -1,5 +1,4 @@
-package com.clickAndcollect.javaSpringBoot.services;
-
+package com.learntime.clothShop.services;
 import com.clickAndcollect.javaSpringBoot.model.ReservationModel;
 
 import java.util.List;

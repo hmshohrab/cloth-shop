@@ -1,7 +1,8 @@
-package com.clickAndcollect.javaSpringBoot.repository;
+package com.learntime.clothShop.repository;
 
-import com.clickAndcollect.javaSpringBoot.model.ProductModel;
-import com.clickAndcollect.javaSpringBoot.model.ReservationModel;
+
+import com.learntime.clothShop.model.CategoryModel;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

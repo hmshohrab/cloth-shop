@@ -1,8 +1,7 @@
-package com.clickAndcollect.javaSpringBoot.manager;
+package com.learntime.clothShop.manager;
 
-import com.clickAndcollect.javaSpringBoot.dto.AvailableProductDto;
-import com.clickAndcollect.javaSpringBoot.dto.ProductDto;
-import com.clickAndcollect.javaSpringBoot.response.MessageResponse;
+import com.learntime.clothShop.dto.ProductDto;
+import com.learntime.clothShop.response.MessageResponse;
 
 public class AvailableProductManager {
 //
@@ -27,6 +26,7 @@ public class AvailableProductManager {
 
     }
 
+    //  idProduct primary and secondary also
 //    only one for readValidation
         public static MessageResponse readValidation(AvailableProductDto dto){
             if(dto.getId().toString().isEmpty()){

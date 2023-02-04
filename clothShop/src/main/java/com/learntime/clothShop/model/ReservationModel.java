@@ -1,4 +1,5 @@
-package com.clickAndcollect.javaSpringBoot.model;
+package com.learntime.clothShop.model;
+
 
 import javax.persistence.*;
 import java.util.Date;

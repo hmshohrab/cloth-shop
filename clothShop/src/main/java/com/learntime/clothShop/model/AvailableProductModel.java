@@ -1,4 +1,5 @@
-package com.clickAndcollect.javaSpringBoot.model;
+package com.learntime.clothShop.model;
+
 
 import javax.persistence.*;
 
@@ -9,6 +10,10 @@ public class AvailableProductModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long idProduct; idProduct should be primary and secondary
 
     @Column(name = "colour", nullable = true)
     private String colour;
