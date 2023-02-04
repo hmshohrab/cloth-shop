@@ -1,5 +1,8 @@
 package com.learntime.clothShop.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
@@ -32,6 +35,18 @@ public class ProductModel {
 
     @Column(name = "importCountry", nullable = true)
     private String importCountry;
+
+    @ManyToMany//(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "category_product",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id")
+    )
+    private final Set<CategoryModel> mCategories = new HashSet<>();
+
+    public void addCategory(CategoryModel category) {
+        this.mCategories.add(category);
+    }
 
     public Long getId() {
         return id;
