@@ -15,7 +15,7 @@ import javax.persistence.Id;
  */
 
 
-class RoleModel {
+public class RoleModel {
     @Id
     @Column(nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -1,45 +1,21 @@
-package com.learnTime.clothshop.model;
-
-import javax.persistence.*;
+package com.learnTime.clothshop.request;
 
 /**
  * BISMILLAH HIR RAHMAN NIR RAHIM
- * Created by Shohrab Hossen on 29,September 2022
+ * Created by Shohrab Hossen on 30,September 2022
  *
  * @Company Data Grid Limited
  * @Address 14/A(new), Dhanmondi R/A, Dhaka 1209.
  * @Email shohrab.datagridltd@gmail.com
  */
 
-
-@Entity
-@Table(name = "users")
-public class UserModel {
-   @Id
-   @Column(nullable = false)
-   @GeneratedValue(strategy = GenerationType.AUTO)
-   private Long id;
-
+public class UserModelRequest {
    private String firstName;
-   String lastName;
-   @Column(nullable = false)
-   String email;
-    String password;
-
-
+   private String lastName;
+   private String password;
+   private String email;
    private String role;
-   private String roleId;
 
-
-
-
-   public Long getId() {
-      return id;
-   }
-
-   public void setId(Long id) {
-      this.id = id;
-   }
 
    public String getFirstName() {
       return firstName;
@@ -57,20 +33,20 @@ public class UserModel {
       this.lastName = lastName;
    }
 
-   public String getEmail() {
-      return email;
-   }
-
-   public void setEmail(String email) {
-      this.email = email;
-   }
-
    public String getPassword() {
       return password;
    }
 
    public void setPassword(String password) {
       this.password = password;
+   }
+
+   public String getEmail() {
+      return email;
+   }
+
+   public void setEmail(String email) {
+      this.email = email;
    }
 
    public String getRole() {
@@ -81,11 +57,6 @@ public class UserModel {
       this.role = role;
    }
 
-   public String getRoleId() {
-      return roleId;
-   }
 
-   public void setRoleId(String roleId) {
-      this.roleId = roleId;
-   }
+
 }
