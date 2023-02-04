@@ -1,12 +1,12 @@
-package com.clickAndcollect.javaSpringBoot.controller;
+package com.learntime.clothShop.controller;
 
 
-import com.clickAndcollect.javaSpringBoot.dto.AvailableProductDto;
-import com.clickAndcollect.javaSpringBoot.manager.AvailableProductManager;
-import com.clickAndcollect.javaSpringBoot.model.AvailableProductModel;
-import com.clickAndcollect.javaSpringBoot.response.MessageResponse;
+import com.learntime.clothShop.dto.AvailableProductDto;
+import com.learntime.clothShop.manager.AvailableProductManager;
+import com.learntime.clothShop.model.AvailableProductModel;
+import com.learntime.clothShop.response.MessageResponse;
+import com.learntime.clothShop.services.AvailableProductService;
 
-import com.clickAndcollect.javaSpringBoot.services.AvailableProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,34 +25,34 @@ public class AvailableProductController {
     AvailableProductService mAvailableProductService;
 
     @PostMapping("create")
-    ResponseEntity<?> create(@RequestBody AvailableProductDto dto){
+    ResponseEntity<?> create(@RequestBody AvailableProductDto dto) {
         MessageResponse validation = AvailableProductManager.validation(dto);
-        if(!validation.isSuccess()){
+        if (!validation.isSuccess()) {
             return ResponseEntity.badRequest().body(validation);
-        }else {
+        } else {
             AvailableProductModel availableProductModel = new AvailableProductModel();
-            AvailableProductModel.setColour(dto.getColour());
-            AvailableProductModel.setQuantity(dto.getQuantity());
-            AvailableProductModel.setSize(dto.getSize());
+            availableProductModel.setColour(dto.getColour());
+            availableProductModel.setQuantity(dto.getQuantity());
+            availableProductModel.setSize(dto.getSize());
 
-            AvailableProductModel isSaved =  mAvailableProductService.insert(availableProductModel);
+            AvailableProductModel isSaved = mAvailableProductService.insert(availableProductModel);
             return ResponseEntity.ok(isSaved);
 
         }
     }
 
     @GetMapping("showOne")
-    ResponseEntity<?> read(@RequestBody  AvailableProductDto dto){
+    ResponseEntity<?> read(@RequestBody AvailableProductDto dto) {
         MessageResponse validation = AvailableProductManager.validation(dto);
-        if(!validation.isSuccess()){
+        if (!validation.isSuccess()) {
             return ResponseEntity.badRequest().body(validation);
-        }else {
+        } else {
             AvailableProductModel availableProductModel = new AvailableProductModel();
-            AvailableProductModel.setColour(dto.getColour());
-            AvailableProductModel.setQuantity(dto.getQuantity());
-            AvailableProductModel.setSize(dto.getSize());
+            availableProductModel.setColour(dto.getColour());
+            availableProductModel.setQuantity(dto.getQuantity());
+            availableProductModel.setSize(dto.getSize());
 
-            AvailableProductModel isSaved =  mAvailableProductService.insert(availableProductModel);
+            AvailableProductModel isSaved = mAvailableProductService.insert(availableProductModel);
             return ResponseEntity.ok(isSaved);
 
 
@@ -60,45 +60,45 @@ public class AvailableProductController {
     }
 
     @GetMapping("showAll")
-    ResponseEntity<?> showAll(){
+    ResponseEntity<?> showAll() {
         return ResponseEntity.ok(mAvailableProductService.findAll());
     }
 
 
     @PutMapping("update")
-    ResponseEntity<?> update(@RequestBody  AvailableProductDto dto){
-        MessageResponse  validation = AvailableProductManager.updatedValidation(dto);
-        if(!validation.isSuccess()){
+    ResponseEntity<?> update(@RequestBody AvailableProductDto dto) {
+        MessageResponse validation = AvailableProductManager.updatedValidation(dto);
+        if (!validation.isSuccess()) {
             return ResponseEntity.badRequest().body(validation);
-        }else {
+        } else {
             AvailableProductModel availableProductModel = new AvailableProductModel();
             // AvailableProductModel.setColour(dto.getColour());
             //AvailableProductModel.setQuantity(dto.getQuantity());
             // AvailableProductModel.setSize(dto.getSize());
 
-            AvailableProductModel isSaved =  mAvailableProductService.insert(availableProductModel);
+            AvailableProductModel isSaved = mAvailableProductService.insert(availableProductModel);
             return ResponseEntity.ok(isSaved);
 
         }
     }
 
     @PostMapping("delete")
-    ResponseEntity<?> delete(@RequestBody  AvailableProductDto dto){
-        MessageResponse  validation = AvailableProductManager.deletedValidation(dto);
-        if(!validation.isSuccess()){
+    ResponseEntity<?> delete(@RequestBody AvailableProductDto dto) {
+        MessageResponse validation = AvailableProductManager.deletedValidation(dto);
+        if (!validation.isSuccess()) {
             return ResponseEntity.badRequest().body(validation);
-        }else {
-                AvailableProductModel availableProductModel = new AvailableProductModel();
-                AvailableProductModel.setColour(dto.getColour());
-                AvailableProductModel.setQuantity(dto.getQuantity());
-                AvailableProductModel.setSize(dto.getSize());
+        } else {
+            AvailableProductModel availableProductModel = new AvailableProductModel();
+            availableProductModel.setColour(dto.getColour());
+            availableProductModel.setQuantity(dto.getQuantity());
+            availableProductModel.setSize(dto.getSize());
 
-                AvailableProductModel isSaved =  mAvailableProductService.insert(availableProductModel);
-                return ResponseEntity.ok(isSaved);
-
-            }
+            AvailableProductModel isSaved = mAvailableProductService.insert(availableProductModel);
+            return ResponseEntity.ok(isSaved);
 
         }
+
+    }
 
 
 }

@@ -43,3 +43,10 @@ class CategoryServiceImpl implements  CategoryService {
     public CategoryModel update(CategoryModel categoryModel){
         return  mCategoryRepository.save(categoryModel);
 }
+
+    @Override
+    public String deleteById(long id) {
+         mCategoryRepository.deleteById(id);
+        return  "Category with id : " + id + " has been deleted successfully";
+    }
+}

@@ -38,15 +38,13 @@ public class CategoryManager {
             return new MessageResponse("Successfully validated");
         }
     }
-    public static MessageResponse deletedValidation(CategoryDto dto){
-        if(dto.getId().isEmpty()){
+    public static MessageResponse deleteValidation(String id){
+        if(id.isEmpty()){
             return new MessageResponse(false, "Category id not provided");
         }else {
             return new MessageResponse("Successfully validated");
         }
     }
-
-
 
 
 }

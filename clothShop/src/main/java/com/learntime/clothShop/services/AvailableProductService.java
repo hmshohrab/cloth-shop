@@ -1,6 +1,7 @@
 package com.learntime.clothShop.services;
 
-import com.clickAndcollect.javaSpringBoot.model.AvailableProductModel;
+
+import com.learntime.clothShop.model.AvailableProductModel;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,6 +1,6 @@
 package com.learntime.clothShop.manager;
 
-import com.learntime.clothShop.dto.ProductDto;
+import com.learntime.clothShop.dto.AvailableProductDto;
 import com.learntime.clothShop.response.MessageResponse;
 
 public class AvailableProductManager {

@@ -24,6 +24,7 @@ public interface CategoryService {
 
     public CategoryModel update(CategoryModel categoryModel);
 
+    String deleteById(long id);
 
 
 }

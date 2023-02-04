@@ -1,4 +1,4 @@
-package com.clickAndcollect.javaSpringBoot.dto;
+package com.learntime.clothShop.dto;
 
 import java.util.Date;
 

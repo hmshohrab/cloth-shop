@@ -1,7 +1,8 @@
 package com.learntime.clothShop.services;
 
-import com.clickAndcollect.javaSpringBoot.model.AvailableProductModel;
-import com.clickAndcollect.javaSpringBoot.repository.AvailableProductRepository;
+import com.learntime.clothShop.model.AvailableProductModel;
+import com.learntime.clothShop.repository.AvailableProductRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

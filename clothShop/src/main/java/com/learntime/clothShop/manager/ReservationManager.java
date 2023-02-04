@@ -1,7 +1,7 @@
 package com.learntime.clothShop.manager;
 
 
-import com.learntime.clothShop.dto.ProductDto;
+import com.learntime.clothShop.dto.ReservationDto;
 import com.learntime.clothShop.response.MessageResponse;
 
 public class ReservationManager {
